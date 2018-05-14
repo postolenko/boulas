@@ -40,5 +40,16 @@ $(document).ready(function() {
 	      // ]
 	    });
 
+		$(".testimonilas_sl").not(".slick-initialized").slick({
+	        dots: true,
+	        arrows: true,
+	        autoplay: true,
+	        autoplaySpeed: 5000,
+	        speed: 1200,
+	        slidesToShow: 1,
+	        slidesToScroll: 1,
+	        fade: true
+	    });
+
 });
 
