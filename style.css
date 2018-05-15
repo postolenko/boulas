@@ -2600,3 +2600,46 @@ ol li:before {
 .reforge:hover:after {
     opacity: 1;
 }
+
+/*-- Popup --*/
+
+.popup_wrapp {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .75);
+    z-index: 15;
+}
+
+.popup {
+    display: block;
+    margin: 90px auto 20px auto;
+}
+
+.popup .form_wrapp {
+    display: block;
+    float: none;
+    width: 350px;
+    padding: 26px 40px;
+    margin: 0 auto;
+}
+
+.close-popup {
+    background-color: transparent;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    z-index: 12;
+    position: absolute;
+    top: 18px;
+    right: 2%;
+    background-image: url(img/close.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1px solid transparent;
+}
+
+/*-- /Popup --*/

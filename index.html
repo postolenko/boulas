@@ -17,11 +17,41 @@
 	<script type="text/javascript" src="vendors/js/jquery.mCustomScrollbar.concat.min.js"></script>
 	<script type="text/javascript" src="vendors/js/smoothscroll.js"></script>
 	<script type="text/javascript" src="vendors/js/jquery.fancybox.js"></script>
+	<script type="text/javascript" src="vendors/js/jquery.maskedinput.min.js"></script>
 	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 	<link rel="icon" type="image/png" href="favicon/favicon.ico" sizes="16x16">
 </head>
 
 <body>
+
+	<!-- Popups -->
+
+	<div class="popup_wrapp scroll" data-popup ="popup_1">
+		<button type="button" class="close-popup"></button>
+		<div class="popup">			
+			<div class="form_wrapp">
+				<h3>Укажите ваши данные для расчета заказа</h3>
+				<div class="form_1">
+					<form>
+						<div class="input_wrapp">
+							<input type="text" placeholder="Укажите ваше имя" />
+						</div>
+						<div class="input_wrapp">
+							<input type="tel" placeholder="Укажите номер телефона" />
+						</div>
+						<div class="submit_wrapp">
+							<button type="submit" class="purple-pill submit">Получить предложение</button>
+						</div>
+						<div class="form-footer">
+							<p>Я согласен с <a href="#" class="orange_link">политикой обработки персональных данных</a></p>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- /Popups -->
 
 	<div class="wrapper">
 
