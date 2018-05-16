@@ -715,10 +715,7 @@ textarea:focus {
 /*-------------------------------------------*/
 
 .header-site {
-/*    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;*/
+
 }
 
 .header-row-1 {
@@ -940,6 +937,7 @@ textarea:focus {
 .promo-article {
     position: relative;
     padding-bottom: 23px;
+    min-height: 688px;
 }
 
 .promo-article .description {
