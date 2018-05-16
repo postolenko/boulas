@@ -216,20 +216,6 @@ textarea:focus::-moz-placeholder          {opacity: 0; transition: opacity .3s e
 textarea:focus:-moz-placeholder           {opacity: 0; transition: opacity .3s ease;}
 textarea:focus:-ms-input-placeholder      {opacity: 0; transition: opacity .3s ease;}
 
-.animation-delay-onload {
-    -webkit-animation-delay: 1s;
-    -moz-animation-delay: 1s;
-    -o-animation-delay: 1s;
-    animation-delay: 1s;
-}
-
-.animation-delay {
-    -webkit-animation-delay: .3s;
-    -moz-animation-delay: .3s;
-    -o-animation-delay: .3s;
-    animation-delay: .3s;
-}
-
 /*-------------------------------------------*/
 /* ----- DEFAULT STYLES ------ */
 /*-------------------------------------------*/
@@ -264,10 +250,6 @@ h3 {
     color: #1d1c1a;
 }
 
-h4 {
-
-}
-
 p {
     font-family: "Museo Sans Cyrl 100", "Arial", "Verdana", sans-serif;
     font-size: 18px;
@@ -283,6 +265,26 @@ li {
     line-height: 24px;
     font-weight: 300;
     color: #1d1c1a;
+}
+
+ol li {
+    position: relative;
+    padding: 11px 0 11px 30px;
+    font-family: "Museo Sans Cyrl 100", "Arial", "Verdana", sans-serif;
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: 300;
+    color: #1d1c1a;
+}
+
+ol li:before {
+    content: "";
+    width: 20px;
+    height: 1px;
+    background-color: #edbd70;
+    position: absolute;
+    top: 21px;
+    left: 0;
 }
 
 a {
@@ -674,7 +676,7 @@ textarea:focus {
     text-align: center;
     position: relative;
     top: 35px;
-    padding: 0 90px;
+    padding: 0 80px;
 }
 
 .slick-dots li {
@@ -715,7 +717,7 @@ textarea:focus {
 /*-------------------------------------------*/
 
 .header-site {
-
+    overflow: hidden;
 }
 
 .header-row-1 {
@@ -872,7 +874,7 @@ textarea:focus {
 }
 
 .main-nav li a:active,
-.main-nav li a.active {
+.main-nav li.active a {
     color: #edbd70;
 }
 
@@ -916,13 +918,104 @@ textarea:focus {
 }
 
 .main-nav li a:active:after,
-.main-nav li a.active:after {
+.main-nav li.active a:after {
     opacity: 1;
 }
 
 .main-nav li a:hover:after {
     opacity: 0;
 }
+
+
+/* ----- Responsive Menu Button ------ */
+
+.respmenubtn {
+    /*display: inline-block;*/
+    display: none;
+    vertical-align: middle;
+    width: 45px;
+    height: 37px;
+    background: transparent;
+    cursor: pointer;
+    z-index: 12;
+    position: absolute;
+    top: 11px;
+    right: 7px;
+    border: 1px solid transparent;
+}
+
+.respmenubtn span {
+    display: block;
+    width: 27px;
+    height: 2px;
+    background: rgb(137, 101, 149);
+    margin: 0 auto 7px auto;
+
+    -webkit-transition-property: transform, border, background;
+    -webkit-transition-duration: .3s;
+    -webkit-transition-timing-function: ease;
+
+    -moz-transition-property: transform, border, background;
+    -moz-transition-duration: .3s;
+    -moz-transition-timing-function: ease;
+
+    -ms-transition-property: transform, border, background;
+    -ms-transition-duration: .3s;
+    -ms-transition-timing-function: ease;
+
+    -o-transition-property: transform, border, background;
+    -o-transition-duration: .3s;
+    -o-transition-timing-function: ease;
+
+    transition-property: transform, border, background;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+}
+
+.respmenubtn span:last-child {
+    margin: 0 auto;
+}
+
+.respmenubtn:active {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); 
+    -webkit-tap-highlight-color: transparent;
+}
+
+.respmenubtn:hover span {
+    background: rgb(137, 101, 149);
+}
+
+.respmenubtn.active span {
+    position: relative;
+    width: 35px;
+    top: 2px;
+    left: 0;
+    background: rgb(137, 101, 149);
+}
+
+.respmenubtn.active span:last-child {
+    display: none;
+}
+
+.respmenubtn.active span:first-child {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    margin: 3px 0 0 0;
+    position: relative;
+    top: 4px;
+    left: 5px;
+}
+
+.respmenubtn.active span:nth-child(2) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+/* ----- / Responsive Menu Button ------ */
 
 /*-------------------------------------------*/
 /* ----- CONTENT ------ */
@@ -960,10 +1053,6 @@ textarea:focus {
     position: absolute;
     top: 0;
     left: -16.5%;
-}
-
-.promo-article h1 {
-
 }
 
 .promo-article p {
@@ -1006,7 +1095,6 @@ textarea:focus {
 }
 
 .promo-photo {
-    /*height: 100%;*/
     width: 100%;
     max-width: 640px;
     min-height: 617px;
@@ -1081,14 +1169,14 @@ textarea:focus {
 }
 
 .thumbnails_1 {
-    margin: 25px -2%;
+    margin: 15px -2%;
 }
 
 .thumb_1 {
     display: inline-table;
     vertical-align: middle;
     width: 29.33%;
-    margin: 10px 2%;
+    margin: 20px 2%;
 }
 
 .thumb_1 .col-1 {
@@ -1206,26 +1294,6 @@ section .row .h2-big {
     font-family: "Museo Sans Cyrl 700", "Arial", "Verdana", sans-serif;
     font-weight: normal;
     color: #edbd70;
-}
-
-ol li {
-    position: relative;
-    padding: 11px 0 11px 30px;
-    font-family: "Museo Sans Cyrl 100", "Arial", "Verdana", sans-serif;
-    font-size: 18px;
-    line-height: 21px;
-    font-weight: 300;
-    color: #1d1c1a;
-}
-
-ol li:before {
-    content: "";
-    width: 20px;
-    height: 1px;
-    background-color: #edbd70;
-    position: absolute;
-    top: 21px;
-    left: 0;
 }
 
 /*-- /Section 3 - Main Page --*/
@@ -1591,6 +1659,19 @@ ol li:before {
     min-height: 121px;
 }
 
+.card.active .card-header .left {
+    display: none;
+}
+
+.card.active .card-header .right {
+    width: 100%;
+    text-align: center;
+}
+
+.card.active .card-header .p-small {
+    display: block;
+}
+
 /*-- /Section 6 - Main Page --*/
 
 /*-- Section 7 - Main Page --*/
@@ -1613,10 +1694,12 @@ ol li:before {
 .article_3 .left {
     width: 62%;
     padding-top: 105px;
+    padding-right: 1%;
 }
 
 .article_3 .right {
     width: 38%;
+    padding-left: 1%;
 }
 
 .article_3 h2 {
@@ -1691,7 +1774,7 @@ ol li:before {
 
 .form-footer p {
     font-family: "Museo Sans Cyrl 100", "Arial", "Verdana", sans-serif;
-    font-size: 14px;
+    font-size: 14px !important;
     line-height: 16px;
     font-weight: 300;
 }
@@ -1720,13 +1803,15 @@ ol li:before {
     min-height: 219px;
     float: left;
     margin: 17px 0;
-    max-width: 420px;
+    padding: 0 17% 0 0;
     text-align: center;
     position: relative;
+    z-index: 2;
 }
 
 .thumbnails-4 .thumb-4:nth-child(even) {
     float: right;
+    padding: 0 0 0 17%;
 }
 
 .thumb-4 .icon-box {
@@ -1740,7 +1825,7 @@ ol li:before {
     height: 30px;
     position: absolute;
     top: 40px;
-    right: 0;
+    right: 28%;
     background-image: url(img/shape_03.png);
     background-position: 1px -1px;
     background-repeat: no-repeat;
@@ -1753,7 +1838,7 @@ ol li:before {
     height: 30px;
     position: absolute;
     top: 40px;
-    left: 0;
+    left: 28%;
     background-image: url(img/shape_03.png);
     background-position: -147px -1px;
     background-repeat: no-repeat;
@@ -1830,6 +1915,11 @@ ol li:before {
     position: relative;
 }
 
+.article_3_2 .right {
+    position: relative;
+    z-index: 2;
+}
+
 .book-img {
     position: absolute;
     top: -67px;
@@ -1848,6 +1938,7 @@ ol li:before {
     width: 100%;
     height: 600px;
     margin: 31px 0 79px 0;
+    overflow: hidden;
     position: relative;
     background-color: #f1ede7;
 }
@@ -1937,10 +2028,6 @@ ol li:before {
 
 .testimonilas_sl {
     margin-bottom: 30px;
-}
-
-.testimonilas_sl .slide {
-
 }
 
 .testimonilas_sl .slick-dots {
@@ -2630,7 +2717,7 @@ ol li:before {
 }
 
 .footer-nav li a:active,
-.footer-nav li a.active {
+.footer-nav li.active a {
     color: #edbd70;
 }
 
@@ -2674,16 +2761,12 @@ ol li:before {
 }
 
 .footer-nav li a:active:after,
-.footer-nav li a.active:after {
+.footer-nav li.active a:after {
     opacity: 1;
 }
 
 .footer-nav li a:hover:after {
     opacity: 0;
-}
-
-.footer-row-2 {
-
 }
 
 .footer-row-2 .col {
@@ -2729,7 +2812,7 @@ ol li:before {
 .thumb-contact {
     display: inline-block;
     vertical-align: top;
-    margin: 0 5%;
+    margin: 8px 5%;
 }
 
 .thumb-contact p {
@@ -2856,7 +2939,8 @@ ol li:before {
 
 .popup {
     display: block;
-    width: 350px;
+    width: 100%;
+    max-width: 350px;
     margin: 90px auto 20px auto;
 }
 

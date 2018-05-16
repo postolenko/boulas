@@ -8,8 +8,6 @@ $(window).load(function() {
 
     getMapParams();
 
-    // getPromoParams();
-
     // ------------------------------
 
     $(".card .card-content").css({
@@ -18,6 +16,8 @@ $(window).load(function() {
 
     $(".show_card").addClass("show");
 
+    $(".card").removeClass("active");
+
     // ------------------------------
 
 });
@@ -25,8 +25,6 @@ $(window).load(function() {
 $(window).resize(function() {
 
     getMapParams();
-
-    // getPromoParams();
 
 });
 
@@ -40,16 +38,12 @@ $(document).ready(function() {
 
         var visibleBlock = $(hrefAttr);
 
-        $(".navigation a").removeClass("active");
-        $(".navigation").find("a[href = '"+ hrefAttr +"']").addClass("active");
+        $(".navigation li").removeClass("active");
+        $(".navigation").find("a[href = '"+ hrefAttr +"']").closest("li").addClass("active");
 
         $('html, body').stop().animate({
             'scrollTop': visibleBlock.offset().top - 20
         }, 800);
-
-        // var navigationWrapp = $(this).closest(".naigation");
-        // $(".respmenubtn[data-nav-btn = '"+ navigationWrapp.attr("data-nav") +"']").removeClass("active");
-        // navigationWrapp.fadeOut(300);
 
     });
 
@@ -170,6 +164,8 @@ $(document).ready(function() {
 
             $(this).addClass("show");
 
+            parentBlock.removeClass("active");
+
         } else {
 
             cardContent.css({
@@ -178,7 +174,46 @@ $(document).ready(function() {
 
             $(this).removeClass("show");
 
+            parentBlock.addClass("active");
+
         }
+
+    });
+
+    // ----------------------------------
+
+    $(function() {
+
+        $(".respmenubtn").click(function() {
+
+            if( $(".main-nav_wrapp").is(":hidden") ) {
+
+                $(".main-nav_wrapp").fadeIn(300);
+
+                $(this).addClass("active");
+
+            } else {
+
+                $(".main-nav_wrapp").fadeOut(300);
+
+                $(this).removeClass("active");
+
+            }
+
+        });
+
+        $(this).keydown(function(eventObject){
+
+            if (eventObject.which == 27 &&
+                $(".main-nav_wrapp").is(":visible") ) {
+
+                    $(".main-nav_wrapp").fadeOut(300);
+
+                    $(".respmenubtn").removeClass("active");
+
+            }
+
+        });
 
     });
 
@@ -186,20 +221,22 @@ $(document).ready(function() {
 
 function getMapParams() {
 
-    if( $(".map-sect").length > 0 ) {
+    if( bodyWidth > 768) {
 
-        $(".map-sect").find("#map").css({
-            "width" : $(".map-sect").find(".contacts_content").offset().left + "px"
-        });
+        if( $(".map-sect").length > 0 ) {
+
+            $(".map-sect").find("#map").css({
+                "width" : $(".map-sect").find(".contacts_content").offset().left + "px"
+            });
+
+        } else {
+
+            $(".map-sect").find("#map").css({
+                "width" : 100 + "%"
+            });
+
+        }
 
     }
 
 }
-
-// function getPromoParams() {
-
-//     $("#promo").css({
-//         "padding-top" : $(".header-site").height() + "px"
-//     });
-
-// }
