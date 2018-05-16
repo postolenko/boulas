@@ -940,7 +940,7 @@ textarea:focus {
     z-index: 12;
     position: absolute;
     top: 11px;
-    right: 7px;
+    right: 0;
     border: 1px solid transparent;
 }
 
