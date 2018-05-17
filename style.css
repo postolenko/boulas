@@ -716,15 +716,18 @@ textarea:focus {
 /* ----- HEADER ------ */
 /*-------------------------------------------*/
 
-.header-site {
-    overflow: hidden;
-}
-
 .header-row-1 {
     border-bottom: 1px solid #efefef;
 }
 
 .header-row-2 {
+    overflow: hidden;
+    padding-bottom: 1px;
+}
+
+.header-row-2:after {
+    display: block;
+    content: "";
     border-bottom: 1px solid #efefef;
 }
 

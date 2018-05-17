@@ -255,6 +255,15 @@
 	    display: inline-block;
 	}
 
+	.header-row-2 {
+	    overflow: none;
+	    padding-bottom: 0;
+	}
+
+	.header-row-2:after {
+		display: none;
+	}
+
 	.main-nav_wrapp {
 		/*display: block;*/
 		display: none;

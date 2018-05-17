@@ -2,7 +2,7 @@ $(window).on("load",function(){
 
 	$(".scroll").mCustomScrollbar();
 
-	if( bodyWidth <= 768 ) {
+	if( bodyWidth <= 900 ) {
 
 		$(".main-nav_wrapp").mCustomScrollbar();
 
@@ -16,7 +16,7 @@ $(window).on("load",function(){
 
 $(window).resize(function() {
 
-	if( bodyWidth <= 768 ) {
+	if( bodyWidth <= 900 ) {
 
 		$(".main-nav").mCustomScrollbar();
 
