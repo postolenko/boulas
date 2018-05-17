@@ -503,15 +503,6 @@
 	    line-height: 40px;
 	}
 
-	/*-- Header --*/
-
-	.footer .tel-link {
-		font-size: 26px;
-		line-height: 33px;
-	}
-
-	/*-- /Header --*/
-
 	/*-- Section 1 - Main Page --*/
 
 	.promo-article {
@@ -519,8 +510,13 @@
 	    overflow: hidden;
 	}
 
+	.promo-article .description .bigletter {
+		display: none;
+	}
+
 	.promo-photo {
 	    height: 100vh;
+	    max-width: 100%;
 	    opacity: .4;
 	}
 
@@ -718,6 +714,11 @@
 	    width: 100%;
 	    padding: 10px 0;
 	    text-align: center;
+	}
+
+	.footer .tel-link {
+		font-size: 26px;
+		line-height: 33px;
 	}
 
 	/*-- /Footer --*/
