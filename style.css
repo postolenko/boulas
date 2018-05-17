@@ -937,7 +937,7 @@ textarea:focus {
     height: 37px;
     background: transparent;
     cursor: pointer;
-    z-index: 12;
+    z-index: 31;
     position: absolute;
     top: 11px;
     right: 0;
