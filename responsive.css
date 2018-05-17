@@ -325,7 +325,7 @@
 		display: none;
 	}
 
-	a.tel-link {
+	.header-site a.tel-link {
 		font-size: 0;
 		line-height: 0;
 	}
